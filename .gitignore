@@ -44,3 +44,9 @@ replay_pid*
 build/classes/kotlin/main/collection/
 
 build/kotlin/
+
+gradlew
+
+build/
+
+gradle/
