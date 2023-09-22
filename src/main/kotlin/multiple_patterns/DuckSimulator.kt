@@ -13,11 +13,16 @@ class DuckSimulator {
         val gooseAdapter = GooseAdapter(Goose())
         println("오리 시뮬레이션 게임")
 
-        simulate(mallardDuck)
-        simulate(redHeadDuck)
-        simulate(duckCall)
-        simulate(rubberDuck)
-        simulate(gooseAdapter)
+        // 오리 집합을 생성한다.
+        val quackAggregate = QuackAggregate().apply {
+            add(mallardDuck)
+            add(redHeadDuck)
+            add(duckCall)
+            add(rubberDuck)
+            add(gooseAdapter)
+        }
+        // 오리 집합을 시뮬레이션 한다.
+        simulate(quackAggregate)
 
         // 오리들이 울은 횟수를 출력한다.
         println("오리들이 울은 횟수 : ${QuackCounter.numberOfQuacks}")
