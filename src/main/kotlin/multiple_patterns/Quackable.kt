@@ -1,5 +1,5 @@
 package multiple_patterns
 
-interface Quackable {
+interface Quackable : QuackObservable {
     fun quack()
 }

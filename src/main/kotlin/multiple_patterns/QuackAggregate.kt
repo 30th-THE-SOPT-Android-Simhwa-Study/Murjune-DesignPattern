@@ -6,7 +6,6 @@ package multiple_patterns
  *
  * */
 class QuackAggregate() : Quackable {
-
     private val quackers: MutableList<Quackable> = mutableListOf()
 
     override fun quack() {
@@ -15,5 +14,19 @@ class QuackAggregate() : Quackable {
 
     fun add(quackable: Quackable) {
         quackers.add(quackable)
+    }
+
+    /**
+     * 모든 오리들의 관찰자를 등록한다.
+     * */
+    override fun registerObserver(observer: Observer) {
+        quackers.forEach { quacker -> quacker.registerObserver(observer) }
+    }
+
+    /**
+     * 어차피 오리들이 알아서 알림을 보낼 것이므로, 여기서는 아무것도 하지 않는다.
+     * */
+    override fun notifyObservers() {
+        throw UnsupportedOperationException()
     }
 }

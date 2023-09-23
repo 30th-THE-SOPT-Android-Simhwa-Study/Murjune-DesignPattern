@@ -8,10 +8,17 @@ package multiple_patterns
  *
  * */
 class QuackCounter(private val duck: Quackable) : Quackable {
-
     override fun quack() {
         duck.quack()
         numberOfQuacks++
+    }
+
+    override fun registerObserver(observer: Observer) {
+        duck.registerObserver(observer)
+    }
+
+    override fun notifyObservers() {
+        duck.notifyObservers()
     }
 
     companion object {

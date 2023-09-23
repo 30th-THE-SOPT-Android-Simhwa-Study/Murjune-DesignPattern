@@ -21,6 +21,9 @@ class DuckSimulator {
             add(rubberDuck)
             add(gooseAdapter)
         }
+        // 오리들의 관찰자 : 오리 학자 추가
+        val quackologist = Quackologist()
+        quackAggregate.registerObserver(quackologist) // 오리 집합에 오리 학자를 등록한다.
         // 오리 집합을 시뮬레이션 한다.
         simulate(quackAggregate)
 
